@@ -1,0 +1,12 @@
+node_modules/
+dist/
+validation*.json
+*.tgz
+*.log
+*.tmp
+.DS_Store
+chat-first-state.json
+.dsh/
+.npmrc
+.env
+.env.*
