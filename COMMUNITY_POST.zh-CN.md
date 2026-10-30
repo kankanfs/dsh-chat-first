@@ -21,6 +21,6 @@
 
 能力边界也说清楚：程序能拦住工具，“先给判断”由指令引导，不能保证模型永远判断正确。它不替代宿主权限；切回讨论不会撤销已完成工作或结束独立后台作业。
 
-目前是 **0.0.1-alpha.1 早期预览版**，只声明兼容 **DSH 0.2.1-rc.5**。PC 完整安装与 Mac/Linux 实机验收仍待完成，详见 [验证范围](VALIDATION.md)。PC 和 Mac 都跑通后才考虑 1.0。
+目前是 **0.0.1-alpha.1 早期预览版**，只声明兼容 **DSH 0.2.1-rc.5**。一台 Windows PC 已通过公开安装后的最小验收；Mac/Linux 实机功能验收待完成，详见 [验证范围](VALIDATION.md)。PC 和 Mac 都跑通后才考虑 1.0。
 
 MIT 开源许可。[源码](https://github.com/kankanfs/dsh-chat-first) · [发布与下载](https://github.com/kankanfs/dsh-chat-first/releases) · [安装说明](INSTALL.md)。实际可下载版本以发布页为准，npm 尚未上架时可使用发布页的 GitHub 来源。演示将在 PC 安装验收后补充。

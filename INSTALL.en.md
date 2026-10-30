@@ -2,7 +2,7 @@
 
 [简体中文](INSTALL.md) · [About Chat First](README.en.md)
 
-**Version 0.0.1-alpha.1 is an early preview.** Complete PC installation and physical Mac validation are pending; both must pass before considering 1.0. Check [Releases](https://github.com/kankanfs/dsh-chat-first/releases) for actual versions and download sources.
+**Version 0.0.1-alpha.1 is an early preview.** Minimum public-installation acceptance passed on one PC; physical Mac validation is pending. Both must pass before considering 1.0. Check [Releases](https://github.com/kankanfs/dsh-chat-first/releases) for actual versions and download sources.
 
 ## Ordinary desktop installation
 
@@ -23,6 +23,8 @@ Unpack the source ZIP into a permanent folder. If your desktop plugin manager ac
 A local directory may be installed as a link; keep it in place. Mac testing should follow this ordinary installation path first so it exposes problems other users would encounter.
 
 ## Report a problem or roll back
+
+Mirrors may lag behind a new publication. If the installer says the plugin was not found, open **Installation source → Custom address**, enter the official registry `https://registry.npmjs.org/`, keep the exact package/version and retry. This happened during the first PC installation on 2026-10-30: the mirror returned 404 while the official registry served the package. It is evidence of a temporary sync delay, not a general claim that mirrors are unusable.
 
 Include DSH version, operating system, installation source, exact error and relevant screenshots. Do not post keys, full conversations or unredacted diagnostic logs. See [validation scope](VALIDATION.en.md) for pending physical Mac/Linux checks.
 

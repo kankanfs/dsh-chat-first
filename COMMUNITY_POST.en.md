@@ -21,6 +21,6 @@ Discussion actually closes the tool channel. Execution uses your existing DSH to
 
 The boundary matters: code gates tools, while instructions guide the model to explain its judgment. Correct judgments are not guaranteed. Host permissions still apply; returning to discussion does not undo completed work or stop independent background jobs.
 
-Current version: **0.0.1-alpha.1 early preview**, declaring compatibility only with **DSH 0.2.1-rc.5**. Full PC installation and physical Mac/Linux acceptance are pending; see [validation scope](VALIDATION.en.md). Consider 1.0 only after PC and Mac both pass.
+Current version: **0.0.1-alpha.1 early preview**, declaring compatibility only with **DSH 0.2.1-rc.5**. Minimum acceptance passed after public installation on one Windows PC; physical Mac/Linux functional acceptance is pending. See [validation scope](VALIDATION.en.md). Consider 1.0 only after PC and Mac both pass.
 
 MIT licensed. [Source](https://github.com/kankanfs/dsh-chat-first) · [Releases/downloads](https://github.com/kankanfs/dsh-chat-first/releases) · [Installation](INSTALL.en.md). The release page lists actual downloadable versions; its GitHub source can be used before npm availability. A demo will follow PC installation acceptance.

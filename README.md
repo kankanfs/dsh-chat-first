@@ -30,11 +30,13 @@ This is more than a “please do not use tools” prompt. Discussion removes the
 4. Click **Start working**, then send the agreed task. The button does not send a message or start work.
 5. Click **Discuss again** to return to discussion. Stop an active turn before switching.
 
+New conversations start in discussion. Existing conversations restore their last selected mode, including execution; restarting DSH does not reset them to discussion.
+
 Main status labels, buttons and hints use Chinese or English according to browser language. Some errors remain Chinese. Model instructions are currently Chinese; you can converse in your preferred language.
 
 ## Install
 
-This is **early preview `0.0.1-alpha.1`**, targeting **DSH 0.2.1-rc.5 only**, not a stable release. Complete PC installation acceptance and physical Mac acceptance are still pending. Both must pass before considering 1.0; see [validation scope](VALIDATION.en.md).
+This is **early preview `0.0.1-alpha.1`**, targeting **DSH 0.2.1-rc.5 only**, not a stable release. The minimum public-installation acceptance loop passed on one Windows PC; physical Mac acceptance is pending. Both platforms must pass before considering 1.0; see [validation scope](VALIDATION.en.md).
 
 Install through **Plugins → Add plugin → Install third-party plugin** in Desktop. Check [GitHub Releases](https://github.com/kankanfs/dsh-chat-first/releases) for actual downloadable versions and sources. Do not install by npm name until that version is listed there; see [Installation](INSTALL.en.md).
 
@@ -51,7 +53,7 @@ This installs into **web**, not Desktop. Desktop owns its own installation workf
 ## Compatibility and limits
 
 - Only **DSH 0.2.1-rc.5** is declared compatible. The exact version constraint prevents unverified host versions from loading the plugin.
-- Windows-derived behavior and generic-package verification are detailed in [Validation](VALIDATION.en.md).
+- Windows: public npm installation, real file-tool calls, mode switching and a full quit/relaunch passed on one PC. Scope and remaining limits are detailed in [Validation](VALIDATION.en.md).
 - macOS: no Windows absolute paths in runtime code; platform-specific shell selection and user-directory state storage. **Physical Mac validation is pending.**
 - Linux: platform conditions checked; physical validation pending.
 - No GPU, bundled model, extra API key, or changes to AGENTS.md.
