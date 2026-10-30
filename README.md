@@ -36,11 +36,9 @@ Main status labels, buttons and hints use Chinese or English according to browse
 
 ## Install
 
-This is **early preview `0.0.1-alpha.1`**, targeting **DSH 0.2.1-rc.5 only**, not a stable release. The minimum public-installation acceptance loop passed on one Windows PC; physical Mac acceptance is pending. Both platforms must pass before considering 1.0; see [validation scope](VALIDATION.en.md).
+This is **early preview `0.0.1-alpha.1`**, targeting **DSH 0.2.1-rc.5 only**, not a stable release. Minimum acceptance passed on one Windows PC and one Apple M5 MacBook Air, including actual tool calls and a full quit/relaunch. These are limited platform checks, not a 1.0 release; see [validation scope](VALIDATION.en.md).
 
-Install through **Plugins → Add plugin → Install third-party plugin** in Desktop. Check [GitHub Releases](https://github.com/kankanfs/dsh-chat-first/releases) for actual downloadable versions and sources. Do not install by npm name until that version is listed there; see [Installation](INSTALL.en.md).
-
-For the current local candidate, use a local-directory/source option if your desktop version offers one. Select the unpacked folder containing `package.json` and `index.mjs`. If it only accepts package sources, establish which local-path/tarball formats it supports; see [Mac handoff](MAC-SETUP.en.md). Do not overwrite the desktop profile or install a different global DSH version as a workaround.
+Install through **Plugins → Add plugin → Install third-party plugin** in Desktop, using npm source **`dsh-chat-first@0.0.1-alpha.1`**. If a mirror has not synced the release, use custom source **`https://registry.npmjs.org/`**. GitHub source and downloads are on [GitHub Releases](https://github.com/kankanfs/dsh-chat-first/releases); see [Installation](INSTALL.en.md). Do not overwrite the desktop profile or install a different global DSH version as a workaround.
 
 For a separate CLI Web profile:
 
@@ -54,7 +52,7 @@ This installs into **web**, not Desktop. Desktop owns its own installation workf
 
 - Only **DSH 0.2.1-rc.5** is declared compatible. The exact version constraint prevents unverified host versions from loading the plugin.
 - Windows: public npm installation, real file-tool calls, mode switching and a full quit/relaunch passed on one PC. Scope and remaining limits are detailed in [Validation](VALIDATION.en.md).
-- macOS: no Windows absolute paths in runtime code; platform-specific shell selection and user-directory state storage. **Physical Mac validation is pending.**
+- macOS: public-package integrity, same-conversation switching, two actual Bash reads and full quit/relaunch persistence passed on one M5 MacBook Air (macOS 26.4.1). The original installation clicks were not observed during acceptance; see [Validation](VALIDATION.en.md).
 - Linux: platform conditions checked; physical validation pending.
 - No GPU, bundled model, extra API key, or changes to AGENTS.md.
 - Uses independent preset `chat-first` and service `chatFirstMode`, without claiming `qa` or `standard` or sharing service identity with the original local plugin.

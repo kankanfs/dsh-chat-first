@@ -34,9 +34,20 @@ The original private plugin was tested in a real Desktop/DeepSeek conversation, 
 
 This is minimum acceptance on one Windows PC, one host version and one model. The real test used the file tool; it does not certify every terminal/MCP tool, English UI, background jobs or long-term stability. Business files were untouched. Private conversation/process evidence remains local. GitHub's main branch records current evidence; version tags and downloadable packages retain their publication-time documentation snapshot.
 
+## 2026-10-30: physical Mac minimum acceptance passed; evidence reviewed on Windows
+
+- Environment: macOS 26.4.1 (25E253), Apple M5 MacBook Air, 16GB, arm64; DSH 0.2.1-rc.5, DeepSeek-V4.1-Flash High.
+- All 24 installed public `dsh-chat-first@0.0.1-alpha.1` distribution files matched the official registry tarball byte-for-byte. Its SHA256 matched the Windows release artifact. This run did not reinstall the plugin or observe the user's original installation clicks, so it does not establish a fresh-machine installation walkthrough.
+- A dedicated conversation completed four turns: default discussion (0 tools) → actual Bash `cat` → discussion (0 tools) → actual Bash `cat` after a full quit/relaunch. Only the file path was supplied; both tool outputs matched their expected random markers and differed from each other. The tester changed the second marker externally.
+- Discussion distinguished historical success from present inability to execute. Paired tool-call/result records contained no all-deferred or fake-protocol failure. The first answer described a 48-character hexadecimal marker as 64 characters; the returned value matched. This was a model wording error, not a tool failure.
+- Quit evidence showed every old process exited; relaunch created new processes. The same conversation, history and `execute` state survived. The tester finally returned to discussion, persisted as `discuss`. A second full restart in discussion was not tested.
+- Windows review independently checked all 15 handoff-file SHA256 values, both raw tool outputs against expected files, mode files and process evidence. These support the limited conclusion above. Raw records stay private; conversation identifiers, user paths and process logs are not uploaded.
+
+Both platform minimum loops have now passed; the version remains alpha. This does not certify every tool, model, complex-task judgment or long-term stability. English controls were used on Mac, without a complete English-experience acceptance run. No source, installed-package or profile patch was used, and business files were untouched.
+
 ## Pending
 
-- Physical macOS installation, actual Bash call and persistence across restart.
+- Full first-installation walkthrough on a fresh Mac, full restart while discussion is selected, and complete English experience.
 - Physical Linux installation.
 - Other DSH versions and actual response quality with other models.
 - Community market inclusion. Check the repository's Releases and npm for current publishing/download status; this file records validation scope only.

@@ -36,13 +36,9 @@
 
 ## 安装
 
-本版本为 **`0.0.1-alpha.1` 早期预览版**，不是稳定版。一台 Windows PC 已通过公开安装后的最小验收，Mac 实机验收仍待完成；两平台都跑通后才考虑 1.0。[验证范围](VALIDATION.md)区分已完成与未完成的检查。
+本版本为 **`0.0.1-alpha.1` 早期预览版**，不是稳定版。一台 Windows PC 与一台 Apple M5 MacBook Air 已通过最小验收，包含真实工具调用和完整退出重开；这不等于已发布 1.0。[验证范围](VALIDATION.md)区分已完成与未完成的检查。
 
-普通用户通过桌面 **插件 → 添加插件 → 安装第三方插件** 安装。来源和实际可下载版本以 [GitHub Releases](https://github.com/kankanfs/dsh-chat-first/releases) 为准；npm 尚未上架时不要按包名安装。具体见[安装指南](INSTALL.md)。
-
-当前候选的本地试装：若桌面版提供 **插件 → 添加插件 → 本地目录**，选择含有本文件、`package.json`、`index.mjs` 的目录，按界面提示安装。需要重启时只重启 DSH，不重装应用。
-
-若客户端没有本地目录入口，可使用它支持的本地包来源，或由 Mac 上的 Codex 按 [Mac 接手指南](MAC-SETUP.md) 查明当前版本的安装入口。不要手工覆盖整个桌面 profile，不要另装不同版本的全局 DSH 来管理桌面插件。
+普通用户通过桌面 **插件 → 添加插件 → 安装第三方插件** 安装，npm 来源填 **`dsh-chat-first@0.0.1-alpha.1`**。若镜像尚未同步，可自定义源为 **`https://registry.npmjs.org/`**。GitHub 来源与下载见 [GitHub Releases](https://github.com/kankanfs/dsh-chat-first/releases)，具体见[安装指南](INSTALL.md)。需要重启时只重启 DSH，不重装应用；不要手工覆盖整个桌面 profile，也不要另装不同版本的全局 DSH 来管理桌面插件。
 
 CLI 的独立 Web profile 可按官方机制安装：
 
@@ -58,7 +54,7 @@ dsh plugin --profile web add /absolute/path/to/dsh-chat-first
 
 - 本候选包只声明支持 **DSH 0.2.1-rc.5**；`engines.dsh` 刻意限制版本，避免未经验证的版本直接加载导致应用启动失败。
 - Windows：一台 PC 已通过公开 npm 安装、真实文件工具调用、模式切换和完整退出重开。具体范围及边界见 `VALIDATION.md`。
-- macOS：运行代码无 Windows 绝对路径；按平台选择 Bash/PowerShell，状态数据写用户目录。**尚未做 Mac 实机验收。**
+- macOS：一台 M5 MacBook Air（macOS 26.4.1）通过公开包一致性、同会话切换、两次真实 Bash 读取及完整退出重开持久化。验收时未重放最初安装点击过程，详见 `VALIDATION.md`。
 - Linux：做过平台选择表达式检查，未做实机验收。
 - 不依赖 GPU、不附带模型、不要求额外 API Key，也不修改用户的 AGENTS.md。
 - 新增独立 `chat-first` 预设；不占用别人可能已有的 `qa`、`standard` 标识，也不与开发阶段的本机插件共享远程服务名。
