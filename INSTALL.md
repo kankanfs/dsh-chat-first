@@ -1,6 +1,6 @@
 # 安装与第一次使用
 
-[English](INSTALL.en.md) · [项目介绍](README.md)
+[English](INSTALL.en.md) · [项目介绍](README.zh-CN.md)
 
 **当前版本为 0.0.1-alpha.1，属于早期预览。** PC 完整安装与 Mac 实机验证待完成，两平台闭环通过后才考虑 1.0。请先看 [Releases](https://github.com/kankanfs/dsh-chat-first/releases) 是否已有对应版本和下载来源。
 

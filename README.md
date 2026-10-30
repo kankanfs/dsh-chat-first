@@ -1,81 +1,77 @@
-# 先聊后做 / Chat First
+# Chat First
 
-[English](README.en.md) · [安装指南](INSTALL.md) · [Mac 接手](MAC-SETUP.md)
+[简体中文](README.zh-CN.md) · [Installation](INSTALL.en.md) · [Mac handoff](MAC-SETUP.en.md)
 
-**先把方向聊清楚，再让 Agent 动手。少走弯路，少做返工。**
+**Agree on the direction before your agent gets to work. Fewer wrong turns. Less rework.**
 
-> 执行很积极，判断慢半拍。
+> Quick to act. A beat behind on judgment.
 
-我们认可 Agent 积极执行、主动探索和寻找更好解法的能力。这个按钮留给用户有疑问、想先商量的时候；目标清楚后，Agent 就应自主推进，不必每一步都等人批准。
+We value an agent's initiative, willingness to explore and drive to find better solutions. The switch is there when you have doubts or want to discuss first. Once the goal is clear, the agent should move forward independently, without waiting for approval at every step.
 
-还在商量方案，Agent 已经开始查文件、跑命令？改成纯聊天，又要重新开会话才能干活？先聊后做让你在同一条 DeepSeek Harness 会话里，掌握讨论与执行的节奏。
+Still weighing an idea while your agent is already reading files and running commands? Switching to plain chat should not mean starting over when you are ready to act. Chat First keeps discussion and execution in one DeepSeek Harness conversation.
 
-适合这些时候：
+Use it when you want to:
 
-- 想先问“这个能做吗，有没有更好的方法”，再决定是否实施。
-- 需求还没定，不想助手沿着一个猜测先做一半。
-- 做到一半想重新商量，保留上下文，聊清楚再继续。
+- Ask “Is this feasible? Is there a better approach?” before committing to implementation.
+- Clarify an unfinished brief before the agent builds on a wrong assumption.
+- Pause for discussion partway through a task, keep the context, and continue afterward.
 
-讨论指令要求助手先给简短判断：理解的目标、可行性与关键限制、建议的下一步；简单问题直接回答。执行状态下，先简短说明要做什么，再按已明确的任务推进。
+Discussion instructions ask for a concise judgment: the understood goal, feasibility and key limits, and a suggested next step. Simple questions get direct answers. In execution mode, the agent is instructed to briefly explain its intended action before proceeding with the agreed task.
 
-**节约来自减少误做与返工。** 不承诺固定的 token 降幅；讨论本身也会消耗 token。已清楚的小任务可以直接切换执行，无需填表或审批长计划。
+**The potential token saving comes from avoiding mistaken work and rework.** No fixed saving is promised; discussion also uses tokens. For a clear, small task, enable tools and get on with it—no forms or long approval plans.
 
-这不是换模型，也不是只写一句“请不要用工具”。讨论状态会撤下工具列表，并在工具准入、执行两处拦截；同时每轮告诉模型它现在具备什么能力，减少“过去能做，所以现在也能做”的混淆。
+This is more than a “please do not use tools” prompt. Discussion removes the tool catalog and blocks calls at admission and dispatch. Fresh capability context helps distinguish what the agent did earlier from what it can do now. Response instructions guide the model; they cannot guarantee a correct feasibility judgment or wording every time.
 
-## 使用
+## Use
 
-1. 在 DSH 桌面版安装插件，重启一次。
-2. 新建会话时选择 **先聊后做 / Chat First**。安装不会更改默认预设，也不会改造已开始的其他会话。
-3. 默认讨论：工具关闭，可以正常聊天。
-4. 点顶部 **开始执行** 后，发送已讨论好的任务。按钮本身不发送消息、不启动工作。
-5. 点 **继续讨论** 回到聊天。正在运行时先停止当前一轮，再切换。
+1. Install in DSH Desktop; restart once if requested.
+2. Create a conversation with **先聊后做 / Chat First**. Installation does not change your default preset or convert existing conversations.
+3. Discussion is the default: chat normally, with tools unavailable.
+4. Click **Start working**, then send the agreed task. The button does not send a message or start work.
+5. Click **Discuss again** to return to discussion. Stop an active turn before switching.
 
-主要状态标签、按钮和操作提示按浏览器语言显示中文或英文，部分错误信息仍为中文。当前模型指令为中文，正常对话语言由用户决定。
+Main status labels, buttons and hints use Chinese or English according to browser language. Some errors remain Chinese. Model instructions are currently Chinese; you can converse in your preferred language.
 
-## 安装
+## Install
 
-本版本为 **`0.0.1-alpha.1` 早期预览版**，不是稳定版。PC 完整安装验收与 Mac 实机验收仍待完成；两平台都跑通后才考虑 1.0。[验证范围](VALIDATION.md)区分已完成与未完成的检查。
+This is **early preview `0.0.1-alpha.1`**, targeting **DSH 0.2.1-rc.5 only**, not a stable release. Complete PC installation acceptance and physical Mac acceptance are still pending. Both must pass before considering 1.0; see [validation scope](VALIDATION.en.md).
 
-普通用户通过桌面 **插件 → 添加插件 → 安装第三方插件** 安装。来源和实际可下载版本以 [GitHub Releases](https://github.com/kankanfs/dsh-chat-first/releases) 为准；npm 尚未上架时不要按包名安装。具体见[安装指南](INSTALL.md)。
+Install through **Plugins → Add plugin → Install third-party plugin** in Desktop. Check [GitHub Releases](https://github.com/kankanfs/dsh-chat-first/releases) for actual downloadable versions and sources. Do not install by npm name until that version is listed there; see [Installation](INSTALL.en.md).
 
-当前候选的本地试装：若桌面版提供 **插件 → 添加插件 → 本地目录**，选择含有本文件、`package.json`、`index.mjs` 的目录，按界面提示安装。需要重启时只重启 DSH，不重装应用。
+For the current local candidate, use a local-directory/source option if your desktop version offers one. Select the unpacked folder containing `package.json` and `index.mjs`. If it only accepts package sources, establish which local-path/tarball formats it supports; see [Mac handoff](MAC-SETUP.en.md). Do not overwrite the desktop profile or install a different global DSH version as a workaround.
 
-若客户端没有本地目录入口，可使用它支持的本地包来源，或由 Mac 上的 Codex 按 [Mac 接手指南](MAC-SETUP.md) 查明当前版本的安装入口。不要手工覆盖整个桌面 profile，不要另装不同版本的全局 DSH 来管理桌面插件。
-
-CLI 的独立 Web profile 可按官方机制安装：
+For a separate CLI Web profile:
 
 ```sh
 dsh plugin --profile web add /absolute/path/to/dsh-chat-first
 ```
 
-上述命令作用于 **web**，并不表示安装进桌面版。桌面 profile 有独立的安装所有权，应使用桌面插件管理器。
+This installs into **web**, not Desktop. Desktop owns its own installation workflow. Keep a local source directory in place if installed as a link; unpack cloud-drive downloads into a permanent folder first.
 
-源目录安装后不要删除或移动它；本地目录安装可能保存为链接。使用网盘搬到 Mac 时先解压到固定目录再安装。
+## Compatibility and limits
 
-## 兼容性与边界
+- Only **DSH 0.2.1-rc.5** is declared compatible. The exact version constraint prevents unverified host versions from loading the plugin.
+- Windows-derived behavior and generic-package verification are detailed in [Validation](VALIDATION.en.md).
+- macOS: no Windows absolute paths in runtime code; platform-specific shell selection and user-directory state storage. **Physical Mac validation is pending.**
+- Linux: platform conditions checked; physical validation pending.
+- No GPU, bundled model, extra API key, or changes to AGENTS.md.
+- Uses independent preset `chat-first` and service `chatFirstMode`, without claiming `qa` or `standard` or sharing service identity with the original local plugin.
+- The host does not convert an existing ordinary conversation to this preset. Once selected for a new conversation, discussion and execution stay in that conversation.
+- Returning to discussion does not undo completed work or stop independent background jobs. Disabling/uninstalling the plugin does not stop jobs either; stop relevant work first.
+- Host permissions, approvals and operating-system access still apply. Tool gating does not guarantee every model statement is correct.
 
-- 本候选包只声明支持 **DSH 0.2.1-rc.5**；`engines.dsh` 刻意限制版本，避免未经验证的版本直接加载导致应用启动失败。
-- Windows：源自同版本桌面实用版；通用包的验证范围另见 `VALIDATION.md`。
-- macOS：运行代码无 Windows 绝对路径；按平台选择 Bash/PowerShell，状态数据写用户目录。**尚未做 Mac 实机验收。**
-- Linux：做过平台选择表达式检查，未做实机验收。
-- 不依赖 GPU、不附带模型、不要求额外 API Key，也不修改用户的 AGENTS.md。
-- 新增独立 `chat-first` 预设；不占用别人可能已有的 `qa`、`standard` 标识，也不与开发阶段的本机插件共享远程服务名。
-- 已开始的普通会话不能直接换成此预设，这是宿主的限制；选择本预设之后，讨论与执行可一直在同一会话切换。
-- 讨论按钮不撤销已完成操作、不终止先前独立启动的后台作业；停用/卸载插件也不等于停止任务。卸载前先停止有关会话与作业。
-- 本插件不替代 DSH 的访问模式、授权和操作系统权限。状态通知减少模型误判，不能保证模型每句话都正确。
+## Data
 
-## 数据
+Each conversation's mode is stored under `$DSH_HOME/plugins/dsh-chat-first/sessions/`, defaulting to `~/.dsh/plugins/dsh-chat-first/sessions/`. Files contain only a data version and mode; filenames encode conversation identifiers.
 
-模式按会话存放在 `$DSH_HOME/plugins/dsh-chat-first/sessions/`，默认即 `~/.dsh/plugins/dsh-chat-first/sessions/`。每个文件仅有数据版本和讨论/执行标记；文件名由会话标识编码生成。
+Nothing is written into the installation directory. Missing/corrupt state defaults to discussion; a failed write does not falsely report a successful switch. Per-conversation files avoid competing profiles overwriting a shared state table. Uninstalling retains these files.
 
-不写安装目录。文件缺失或损坏时默认关闭工具；写入失败不会让界面假装切换成功。不同会话独立存储，避免一个 profile 更新整张状态表覆盖另一 profile 的选择。卸载保留这些状态文件，避免擅自删除数据。
+The plugin adds no external service, listening port or telemetry. Execution uses the models and tools already configured in DSH.
 
-插件本身不新增外部服务、监听端口或遥测。执行时仍使用 DSH 已配置的模型和工具。
+## Develop and share
 
-## 开发和分享
+Plain JavaScript; no install hooks or build step. The source ZIP includes dependency-free core checks (`npm test`), native offline regression (`test/native.mjs`) and the allowlisted packager (`tools/release.mjs`). Test and release tools are not included in the npm runtime package.
 
-纯 JavaScript，无安装脚本、无需构建。源码包中，`npm test` 运行无依赖的核心检查；`test/native.mjs` 是使用安装版真实协议/工具历史的离线回归，运行方式见 Mac 指南。测试和打包工具只随源码 ZIP 分发。npm 包使用 `files` 白名单；源码中的 `tools/release.mjs` 生成 npm tarball 并检查私有文件和路径。
+Use alpha previews to collect PC/Mac installation evidence; consider 1.0 only after both acceptance loops pass. Follow the [release checklist](RELEASE.en.md). A GitHub repository, an npm release and community-market inclusion are separate steps. Publishing to npm does not automatically list the plugin in everyone's marketplace.
 
-当前使用 alpha 预览收集 PC/Mac 安装反馈，完整闭环通过后再考虑 1.0，见 [发布清单](RELEASE.md)。GitHub 源码仓库、npm 包、社区市场收录是三件不同的事；发布 npm 不会自动进入任何人的插件列表。
-
-许可：MIT。标准预设组合参考 DeepSeek Harness，见 [来源与许可](THIRD_PARTY_NOTICES.md)。
+MIT. Standard preset composition is derived from DeepSeek Harness; see [attribution and license](THIRD_PARTY_NOTICES.md).
