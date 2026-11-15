@@ -2,6 +2,8 @@
 
 [简体中文](README.zh-CN.md) · [Install](INSTALL.en.md) · [Validation](VALIDATION.en.md)
 
+> **Status: maintenance paused.** The maintainer has stopped using Chat First while evaluating newer DSH versions and a separate memory workflow. Version 0.1.1 was validated with DSH 0.2.2-rc.1 only; compatibility with newer DSH releases has not been verified. Existing releases remain available, but please do not assume the plugin will work after a DSH update. No date for renewed maintenance is set.
+
 **Less ceremony. More conversation. Tools when you are ready.**
 
 DSH can be quick with a clear task, yet an open conversation can turn into repeated background, elaborate plans and another invitation to start working. Sometimes you end up managing the conversation instead of discussing the subject.
